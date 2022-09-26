@@ -31,13 +31,11 @@ excusesRouter.get("/", async (req: Request, res: Response) => {
 // GET excuses/random/:id
 
 excusesRouter.get("/random/:http_code?", async (req: Request, res: Response) => {
-  console.log('random');
   
   const http_code: number = parseInt(req.params.http_code, 10);
 
   try {
     const excuse: Excuse = await ExcuseService.findRandom(http_code);
-    console.log(excuse);
     
     if (excuse) {
       return res.status(200).send(excuse);

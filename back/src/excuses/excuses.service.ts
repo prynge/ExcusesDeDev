@@ -28,7 +28,6 @@ export const find = async (http_code: number): Promise<Excuse> => {
 };
 
 export const findRandom = async (http_code?: number): Promise<Excuse> => {
-    console.log('findrandom');
     
     let excuse : Excuse = {} as Excuse;
     let min = 0;
@@ -40,13 +39,11 @@ export const findRandom = async (http_code?: number): Promise<Excuse> => {
             code = excuses[Math.floor(Math.random() * (max - min) + min)].http_code;
         } while (code==http_code);
         
-        console.log('2',code);
         excuses.forEach(element => {
             if (element.http_code==code) {
                 excuse = element;
             }
         });
-        console.log('3',excuse);
         
     } while (!excuse.http_code);
     return excuse
