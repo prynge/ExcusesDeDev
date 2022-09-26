@@ -1,0 +1,13 @@
+{
+  "name": "excusesdedev",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "install": "cd ./front/ && npm i && cd ../back/ && npm i && cd..",
+    "start": "concurrently --kill-others \"npm run start-api\" \"npm run start-app\"",
+    "start-app": "cd ./front/ && npm run dev",
+    "start-api": "cd ./back/ && npm run dev"
+  },
+  "author": "Yann KOTTO",
+  "license": "ISC"
+}
