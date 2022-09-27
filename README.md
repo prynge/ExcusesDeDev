@@ -28,3 +28,9 @@ cd ./back/
 npm install
 npm run dev
 ```
+
+## Contribution
+
+Le projet est structuré en deux parties:
+ -front 
+ -back
